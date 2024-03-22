@@ -1,0 +1,25 @@
+{
+  "kind": "collectionType",
+  "collectionName": "teams",
+  "info": {
+    "singularName": "team",
+    "pluralName": "teams",
+    "displayName": "Teams"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "name": {
+      "type": "string",
+      "unique": true
+    },
+    "players": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::player.player",
+      "mappedBy": "team"
+    }
+  }
+}

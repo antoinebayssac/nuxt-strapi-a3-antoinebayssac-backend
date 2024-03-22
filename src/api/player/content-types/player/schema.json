@@ -1,0 +1,68 @@
+{
+  "kind": "collectionType",
+  "collectionName": "players",
+  "info": {
+    "singularName": "player",
+    "pluralName": "players",
+    "displayName": "Player",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "first_name": {
+      "type": "string",
+      "unique": false,
+      "required": true
+    },
+    "last_name": {
+      "type": "string",
+      "unique": false,
+      "required": true
+    },
+    "image": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": [
+        "images"
+      ]
+    },
+    "slug": {
+      "type": "string",
+      "required": false,
+      "unique": true
+    },
+    "country": {
+      "type": "string",
+      "unique": false,
+      "required": false
+    },
+    "age": {
+      "type": "integer",
+      "required": false
+    },
+    "country_player": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    },
+    "team": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::team.team",
+      "inversedBy": "players"
+    },
+    "description": {
+      "type": "text"
+    }
+  }
+}
